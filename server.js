@@ -27,8 +27,6 @@ async function init() {
     )`);
   const r = await pool.query("SELECT 1 FROM app_state WHERE id = 1");
   if (!r.rowCount) {
-    // Eerste start: alleen de admin-gebruiker; de app vult de rest van de
-    // startgegevens (assumptions, klassen, routes, …) aan bij de eerste login.
     const initial = {
       users: [
         { id: "U1", naam: "Dinesh", gebruikersnaam: "admin", pincode: "1234", rol: "Admin", status: "Actief" },
